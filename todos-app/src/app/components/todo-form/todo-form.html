@@ -1,0 +1,11 @@
+<h2>Formulaire</h2>
+<form [formGroup] = "todoForm" (ngSubmit)="submitTodo()">
+
+
+  Title: <input type="text" formControlName="title"><br>
+  <input type="checkbox" formControlName="completed"><br>
+  <button type="submit">Submit</button>
+
+
+</form>
+
