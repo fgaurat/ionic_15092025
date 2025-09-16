@@ -13,18 +13,32 @@ import {
   IonCheckbox,
   IonInput,
   IonButton,
+  IonSkeletonText,
+  IonItemSliding,
+  IonItemOptions,
+  IonItemOption,
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { TodoService } from '../services/todo.service';
 import { Todo, Todos } from '../models/todo';
 import { RouterLink } from '@angular/router';
 import { catchError, of, tap } from 'rxjs';
-import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
+    IonIcon,
+    IonItemOption,
+    IonItemOptions,
+    IonSkeletonText,
     IonButton,
     IonInput,
     IonCheckbox,
@@ -38,8 +52,9 @@ import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angu
     IonList,
     IonLabel,
     RouterLink,
-    ReactiveFormsModule
-],
+    ReactiveFormsModule,
+    IonItemSliding,
+  ],
 })
 export class HomePage implements OnInit {
   private todoService = inject(TodoService);
@@ -82,15 +97,7 @@ export class HomePage implements OnInit {
       .subscribe();
   }
 
-
-  delete(todo:Todo){
-    
-
-    this.todoService.deleteTodo()
-
-
-
-
-
+  delete(todo: Todo) {
+    this.todoService.deleteTodo(todo.id!)
   }
 }
