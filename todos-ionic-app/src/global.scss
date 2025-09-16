@@ -33,5 +33,22 @@
  */
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.class.css";
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+
+
+:root {
+  --app-card-radius: 12px;
+}
+
+html.ios{
+  --app-card-radius: 8px;
+}
+
+
+html.md{
+  --app-card-radius: 16px;
+}
+
+.card { border-radius: var(--app-card-radius); }

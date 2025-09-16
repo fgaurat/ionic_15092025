@@ -14,6 +14,8 @@ import { addIcons } from 'ionicons';
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    // provideIonicAngular({mode:'md'}),
+    // provideIonicAngular({mode:'ios'}),
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient()
